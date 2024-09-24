@@ -22,7 +22,7 @@ function processInputSync(input) {
 
 function mainSync() {
     rl.setPrompt('tulis kalimatmu disini > ');
-    rl.prompt();
+    rl.prompt();    
 
     rl.on('line', (line) => {
         if (line.trim().toLowerCase() === 'good bye!') {
