@@ -1,19 +1,37 @@
 [
   {
     "id": 1,
-    "content": "saya mau pergi ke pasar",
-    "completed": false,
-    "tags": []
+    "content": "belajar masak",
+    "completed": true,
+    "tags": [
+      "masak",
+      "belajar",
+      "sayur",
+      "asam",
+      "makan"
+    ]
   },
   {
     "id": 2,
-    "content": "saya mau pergi ke mall",
+    "content": "belajar ngoding",
+    "completed": false,
+    "tags": [
+      "belajar",
+      "node",
+      "berak",
+      "seke",
+      "bon"
+    ]
+  },
+  {
+    "id": 3,
+    "content": "aku ngopi",
     "completed": true,
     "tags": []
   },
   {
-    "id": 3,
-    "content": "saya mau tidur",
+    "id": 4,
+    "content": "dia siapa?",
     "completed": false,
     "tags": []
   }
