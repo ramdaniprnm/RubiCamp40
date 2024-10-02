@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "content": "saya mau pergi ke pasar",
+    "completed": false,
+    "tags": []
+  },
+  {
+    "id": 2,
+    "content": "saya mau pergi ke mall",
+    "completed": true,
+    "tags": []
+  },
+  {
+    "id": 3,
+    "content": "saya mau tidur",
+    "completed": false,
+    "tags": []
+  }
+]
