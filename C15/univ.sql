@@ -8,14 +8,6 @@ NI03|Isnain|2005-03-14|JL.Jalan
 
 -- no 2
 
-SELECT *, 
-(strftime('%Y', 'now') - strftime('%Y', tgl_lahir)) AS umur
-FROM mahasiswa
-ORDER BY umur ASC;
-
-NI01|Rahmat|2006-03-14|JL.Waluh|IDJ01|18
-NI03|Isnain|2005-03-14|JL.Jalan|IDJ02|19
-NI02|Rohimat|2000-06-16|JL.Kawal|IDJ02|24
 
 SELECT *,        
 (strftime('%Y', 'now') - strftime('%Y', tgl_lahir)) AS umur
