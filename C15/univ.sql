@@ -3,9 +3,9 @@
 SELECT mahasiswa.*, jurusan.nama_jurusan 
 FROM mahasiswa INNER JOIN jurusan ON jurusan.id_jurusan = mahasiswa.id_jurusan; 
 
-NI01|Rahmat|2006-03-14|JL.Waluh
-NI02|Rohimat|2000-06-16|JL.Kawal
-NI03|Isnain|2005-03-14|JL.Jalan
+NI01|Rahmat|2006-03-14|JL.Waluh|IDJ01|Teknik Mesin
+NI02|Rohimat|2000-06-16|JL.Kawal|IDJ02|Teknik Las
+NI03|Isnain|2005-03-14|JL.Jalan|IDJ02|Teknik Las
 
 -- no 2
 
