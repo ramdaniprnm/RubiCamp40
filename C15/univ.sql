@@ -1,6 +1,7 @@
 -- no 1
 
-SELECT DISTINCT mahasiswa.nim, mahasiswa.nama, mahasiswa.tgl_lahir, mahasiswa.alamat, jurusan.id_jurusan, jurusan.nama_jurusan FROM mahasiswa INNER JOIN jurusan ON jurusan.id_jurusan = jurusan.id_jurusan; 
+SELECT mahasiswa.*, jurusan.nama_jurusan 
+FROM mahasiswa INNER JOIN jurusan ON jurusan.id_jurusan = mahasiswa.id_jurusan; 
 
 NI01|Rahmat|2006-03-14|JL.Waluh
 NI02|Rohimat|2000-06-16|JL.Kawal
