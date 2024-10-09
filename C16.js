@@ -65,11 +65,11 @@ class CarFactory {
   }
 
   produce(year) {
-    const count = 12; // Tetapkan jumlah produksi menjadi 12
+    const count = 12; //
     for (let i = 0; i < count; i++) {
       let car;
-      if ([4, 9, 10, 11].includes(i)) {
-        car = new Rush(year); // Mobil Rush dgn garansi 3 tahun
+      if (i === 4 || i == 9 || i == 10 || i == 11) {
+        car = new Rush(year); //
       } else {
         car = Math.random() < 0.5 ? new Agya(year) : new Rush(year);
       }
@@ -82,13 +82,13 @@ class CarFactory {
     this.cars.forEach((car, index) => {
       const details = car.information();
       console.log(`no. ${index + 1}`);
-      console.log(`varian     : ${details.model}`);
-      console.log(`sn         : ${details.sn}`);
-      console.log(`door       : ${details.doors}`);
-      console.log(`seat       : ${details.seats} seater`);
-      console.log(`tyre       : ${details.tyre}`);
-      console.log(`year       : ${details.year}`);
-      console.log(`warranty   : ${details.warranty}`);
+      console.log(`varian   : ${details.model}`);
+      console.log(`sn       : ${details.sn}`);
+      console.log(`door     : ${details.doors}`);
+      console.log(`seat     : ${details.seats} seater`);
+      console.log(`tyre     : ${details.tyre}`);
+      console.log(`year     : ${details.year}`);
+      console.log(`warranty : ${details.warranty}`);
       console.log("\n");
     });
   }
@@ -98,13 +98,13 @@ class CarFactory {
     this.cars.forEach((car, index) => {
       const details = car.information();
       console.log(`no. ${index + 1}`);
-      console.log(`varian     : ${details.model}`);
-      console.log(`sn         : ${details.sn}`);
-      console.log(`door       : ${details.doors}`);
-      console.log(`seat       : ${details.seats} seater`);
-      console.log(`tyre       : ${details.tyre}`);
-      console.log(`year       : ${details.year}`);
-      console.log(`warranty   : ${details.warranty}`);
+      console.log(`varian  : ${details.model}`);
+      console.log(`sn      : ${details.sn}`);
+      console.log(`door    : ${details.doors}`);
+      console.log(`seat    : ${details.seats} seater`);
+      console.log(`tyre    : ${details.tyre}`);
+      console.log(`year    : ${details.year}`);
+      console.log(`warranty: ${details.warranty}`);
 
       if (car.warrantyCheck(Year)) {
         console.log(`status on ${Year} this guarantee status active`);
