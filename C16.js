@@ -5,6 +5,7 @@ class Tyre {
   }
 }
 
+// constructor/konstruktor
 class Car {
   constructor(model, year, seats, doors, warranty, tyre) {
     this.model = model;
@@ -16,13 +17,14 @@ class Car {
     this.warranty = warranty;
   }
 
+  // instance
   generateSerialNumber() {
-    return `${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+    return `${Date.now()}-${Math.floor(Math.random() * 10000)}`; //untuk menghasilkan nomor seri
   }
 
   newTyre(tyre) {
     this.tyre = tyre; // menetapkan nilai ke ke property "tyre"
-  }
+  } 
 
   information() {
     return {
@@ -55,6 +57,7 @@ class Rush extends Car {
   }
 }
 
+// menggunakan property pada konstruktor class:
 class CarFactory {
   constructor() {
     this.cars = []; // array kosong untuk cars

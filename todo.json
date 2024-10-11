@@ -1,37 +1,34 @@
 [
   {
     "id": 1,
-    "content": "belajar masak",
-    "completed": true,
+    "content": "saya ingin makan",
+    "completed": false,
     "tags": [
-      "masak",
-      "belajar",
-      "sayur",
-      "asam",
-      "makan"
+      "makan",
+      "dan",
+      "minum"
     ]
   },
   {
     "id": 2,
-    "content": "belajar ngoding",
+    "content": "saya ingin minum",
     "completed": false,
     "tags": [
-      "belajar",
-      "node",
-      "berak",
-      "seke",
-      "bon"
+      "makan",
+      "dan",
+      "minum",
+      "sayur"
     ]
   },
   {
     "id": 3,
-    "content": "aku ngopi",
-    "completed": true,
+    "content": "saya ingin main",
+    "completed": false,
     "tags": []
   },
   {
     "id": 4,
-    "content": "dia siapa?",
+    "content": "saya mau juga",
     "completed": false,
     "tags": []
   }

@@ -2,24 +2,24 @@ const fs = require("fs");
 const { log } = require("util");
 const path = "todo.json";
 
-const readTasks = () => {
+function readTasks() {
   const data = fs.readFileSync(path, "utf-8");
   return JSON.parse(data);
-};
+}
 
-const writeTasks = (tasks) => {
+function writeTasks(tasks) {
   fs.writeFileSync(path, JSON.stringify(tasks, null, 2));
-};
+}
 
 // List all tasks
-const listTasks = () => {
+function listTasks() {
   const tasks = readTasks();
   console.log(`daftar pekerjaan`);
 
   tasks.forEach((task) =>
     console.log(`${task.id}. [${task.completed ? "x" : " "}] ${task.content}`)
   );
-};
+}
 
 const getTaskById = (id) => {
   const task = readTasks().find((task) => task.id === id);
@@ -35,15 +35,15 @@ const getTaskById = (id) => {
 };
 
 // Add new task
-const addTask = (content) => {
+function addTask(content) {
   const tasks = readTasks();
   const newTask = { id: tasks.length + 1, content, completed: false, tags: [] };
   tasks.push(newTask);
   writeTasks(tasks);
   console.log(`"${content}" telah ditambahkan`);
-};
+}
 
-const deleteTask = (id) => {
+function deleteTask(id) {
   let tasks = readTasks();
   const taskIndex = tasks.findIndex((t) => t.id === id);
   if (taskIndex !== -1) {
@@ -57,9 +57,9 @@ const deleteTask = (id) => {
   } else {
     console.log(`Task with ID ${id} not found.`);
   }
-};
+}
 
-const completeTask = (id) => {
+function completeTask(id) {
   let task = readTasks().find((t) => t.id === id);
   if (task) {
     if (task.completed) {
@@ -72,9 +72,9 @@ const completeTask = (id) => {
   } else {
     console.log(`Task with ID ${id} not found.`);
   }
-};
+}
 
-const uncompleteTask = (id) => {
+function uncompleteTask(id) {
   let tasks = readTasks();
   const task = tasks.find((t) => t.id === id);
   if (task) {
@@ -84,32 +84,34 @@ const uncompleteTask = (id) => {
   } else {
     console.log(`"${id}" tidak ditemukan.`);
   }
-};
+}
 
-const listOutstanding = (order = "asc") => {
+function listOutstanding(order = "asc") {
   const tasks = readTasks().filter((t) => !t.completed);
   sortTasks(tasks, order);
   console.log("daftar pekerjaan");
   tasks.forEach((task) => console.log(`${task.id}. [ ] ${task.content}`));
-};
+}
 
-const listCompleted = (order = "asc") => {
+function listCompleted(order = "asc") {
   const tasks = readTasks().filter((t) => t.completed);
   sortTasks(tasks, order);
   console.log("Daftar pekerjaan");
   tasks.forEach((task) => console.log(`${task.id}. [x] ${task.content}`));
-};
+}
 
-const sortTasks = (tasks, order) => {
+function sortTasks(tasks, order) {
   tasks.sort((a, b) => (order === "asc" ? a.id - b.id : b.id - a.id));
-};
+}
 
-const tagTask = (id, tags) => {
+function tagTask(id, tags) {
   try {
     let tasks = readTasks();
     const task = tasks.find((t) => t.id === id);
     const existingTags = task.tags;
-    const newTags = tags.filter((tag) => !existingTags.includes(tag));
+    const newTags = tags.filter((tag) => {
+      return !existingTags.includes(tag);
+    });
     if (newTags.length > 0) {
       task.tags.push(...newTags);
       writeTasks(tasks);
@@ -124,21 +126,23 @@ const tagTask = (id, tags) => {
   } catch {
     console.log(`Task ${id} tidak ditemukan.`);
   }
-};
+}
 
-const filterTasksByKeyword = (tag) => {
+function filterTasksByKeyword(tag) {
   const tasks = readTasks();
   const filterTasksByKeyword = tasks.filter((task) => task.tags.includes(tag));
 
   if (filterTasksByKeyword.length > 0) {
     console.log("Daftar pekerjaan");
-    filterTasksByKeyword.forEach((task) =>
-      console.log(`${task.id}. [${task.completed ? "x" : " "}] ${task.content}`)
-    );
+    filterTasksByKeyword.forEach((task) => {
+      console.log(
+        `${task.id}. [${task.completed ? "x" : " "}] ${task.content}`
+      );
+    });
   } else {
     console.log(`Tidak ada tugas dengan tag "${tag}".`);
   }
-};
+}
 
 const showHelp = () => {
   console.log(` 

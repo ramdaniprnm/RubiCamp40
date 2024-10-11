@@ -9,7 +9,6 @@ NI03|Isnain|2005-03-14|JL.Jalan|IDJ02|Teknik Las
 
 -- no 2
 
-
 SELECT *,        
 (strftime('%Y', 'now') - strftime('%Y', tgl_lahir)) AS umur
 FROM mahasiswa 

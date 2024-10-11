@@ -10,8 +10,6 @@ function spiral(param1) {
     matrix.push(row);
   }
 
-  // Initialize boundaries
-
   let left = 0;
   let top = 0;
   let right = matrix[0].length - 1;
@@ -43,6 +41,17 @@ function spiral(param1) {
 }
 
 // Example usage:
+console.log(spiral(5));
+console.log(spiral(6));
+console.log(spiral(7));
+
+// cara rubicamp
+function spiral(size) {
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {}
+  }
+}
+
 console.log(spiral(5));
 console.log(spiral(6));
 console.log(spiral(7));
