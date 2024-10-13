@@ -24,7 +24,7 @@ class Car {
 
   newTyre(tyre) {
     this.tyre = tyre; // menetapkan nilai ke ke property "tyre"
-  } 
+  }
 
   information() {
     return {
